@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gerador de Torneio</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* (estilos copiados do seu código original) */
+      * { padding: 0; margin: 0; box-sizing: border-box; }
+      html, body { background: #ddd}
+      
+      .d-flex { display: flex;
+      }
+      .round_group { padding: 10px; height: 100%; }
+      .round_group:nth-child(2) .square_group {
+        margin-top: 140px;
+        margin-bottom: 340px;
+      }
+      .round_group:nth-child(3) .square_group {
+        margin-top: 413px;
+        margin-bottom: 885px;
+      }
+      .round_group:nth-child(4) .square_group {
+        position: absolute;
+        top: 980px;
+      }
+      .square_group { margin-bottom: 70px; }
+      .square {
+        background: #fff;
+        width: 300px;
+        border-radius: 5px;
+        border-left: solid 4px #7A7979;
+        position: relative;
+      }
+      .square span { display: block; width: calc(300px - 80px); }
+      .square img {
+        width: 80px; height: 80px;
+        position: absolute; right: 0; top: 0;
+      }
+      .square p { margin: 0; padding: 7px; font-size: 20px; }
+      .square p:nth-child(1) {
+        font-weight: bold;
+        border-bottom: solid 1px #eee;
+      }
+      .square p:nth-child(2) {
+        font-size: 14px;
+        font-weight: 200;
+      }
+      .ligation {
+        width: 5px;
+        height: 25px;
+        background: #B9BBB9;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ligation.next {
+        width: 250px;
+        height: 5px;
+        position: relative;
+        top: -25px;
+        z-index: 9999;
+        float: left;
+        left: 142.7px;
+      }
+      .ligation.winner { background: #0A4B04; }
+      .square.winner { border-left-color: #0A4B04; }
+      .ligation.connector {
+        position: relative;
+        height: 40px;
+        float: left;
+        left: calc(147.6px + 250px)
+      }
+      .ligation.connector:not(.invert) {
+        top: -25px;
+      }
+      .ligation.connector.invert {
+        bottom: 60px;
+      }
+      .round_group:nth-child(2) .ligation.connector {
+        height: 180px;
+      }
+      .round_group:nth-child(2) .ligation.connector.invert {
+        bottom: 200px;
+      }
+      .round_group:nth-child(3) .ligation.connector {
+        height: 490px;
+      }
+      .round_group:nth-child(3) .ligation.connector.invert {
+        bottom: 510px;
+      }
+      .round_group:nth-child(4) .connector {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex" id="content">Loading Content</div>
+    <script src="./main.js"></script>
+  </body>
+</html>
