@@ -111,7 +111,7 @@ const Players = {
 
 const query = new URLSearchParams(location.search);
 const fetchRes = await fetch("/results.txt?time=" + Date.now());
-const res = (await fetchRes.text()).split(",").map(e => {
+const res = (await fetchRes.text()).split(/\r?\n/g).map(e => {
   if(e === "0") return 0;
   if(e === "1") return 1;
   return -1;
